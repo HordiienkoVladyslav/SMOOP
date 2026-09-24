@@ -8,8 +8,6 @@ namespace LB2
     {
         public static void Run()
         {
-            Console.WriteLine("=== ЗАВДАННЯ 3: Підприємство та робітники ===\n");
-
             var company = new Company_Task3
             {
                 Name = "Tech Solutions",
@@ -31,11 +29,9 @@ namespace LB2
 
             // 1. Кількість робітників (усіх працівників підприємства)
             int totalEmployees = company.Employees.Count;
-            Console.WriteLine($"1. Загальна кількість працівників: {totalEmployees}");
 
             // 2. Об'єм заробітної платні, що необхідно виплатити
             decimal totalSalaryBudget = company.Employees.Sum(e => e.Salary);
-            Console.WriteLine($"2. Загальний фонд заробітної плати: {totalSalaryBudget} грн.");
 
             // 3. 10 робітників із найбільшим стажем -> наймолодший за віком із вищою освітою
             var youngestWithEduFromTop10Exp = company.Employees
@@ -45,15 +41,13 @@ namespace LB2
                 .OrderBy(e => e.Age)
                 .FirstOrDefault();
 
-            Console.WriteLine($"\n3. Наймолодший з вищою освітою серед 10 найдосвідченіших:\n   {youngestWithEduFromTop10Exp}");
 
             // 4. Наймолодший та найстарший менеджер компанії
             var managers = company.Employees.OfType<Manager>();
             var youngestManager = managers.OrderBy(m => m.Age).FirstOrDefault();
             var oldestManager = managers.OrderByDescending(m => m.Age).FirstOrDefault();
 
-            Console.WriteLine($"\n4. Наймолодший менеджер: {youngestManager}");
-            Console.WriteLine($"   Найстарший менеджер: {oldestManager}");
+
 
             // 5. Працівники, що народилися у жовтні, згруповані за професійним спрямуванням
             var octoberBornGrouped = company.Employees

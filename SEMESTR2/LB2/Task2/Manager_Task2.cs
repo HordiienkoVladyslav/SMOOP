@@ -8,16 +8,14 @@ namespace LB2
     {
         public static void Run()
         {
-            Console.WriteLine("=== ЗАВДАННЯ 2: Телефони ===\n");
-
             var phones = new List<Phone>
             {
-                new Phone { Name = "iPhone 13", Manufacturer = "Apple", Price = 800, ReleaseDate = new DateTime(2021, 9, 24) },
+                new Phone { Name = "iPhone 16", Manufacturer = "Apple", Price = 2000, ReleaseDate = new DateTime(2021, 9, 24) },
                 new Phone { Name = "iPhone 10", Manufacturer = "Apple", Price = 450, ReleaseDate = new DateTime(2017, 11, 3) },
                 new Phone { Name = "Galaxy S22", Manufacturer = "Samsung", Price = 750, ReleaseDate = new DateTime(2022, 2, 25) },
                 new Phone { Name = "Galaxy A52", Manufacturer = "Samsung", Price = 350, ReleaseDate = new DateTime(2021, 3, 17) },
-                new Phone { Name = "Xperia 1", Manufacturer = "Sony", Price = 900, ReleaseDate = new DateTime(2019, 5, 30) },
-                new Phone { Name = "Redmi Note 10", Manufacturer = "Xiaomi", Price = 200, ReleaseDate = new DateTime(2021, 3, 16) },
+                new Phone { Name = "POCO X5 Pro", Manufacturer = "Xiaomi", Price = 250, ReleaseDate = new DateTime(2019, 5, 30) },
+                new Phone { Name = "Redmi Note 10", Manufacturer = "Xiaomi", Price = 150, ReleaseDate = new DateTime(2021, 3, 16) },
                 new Phone { Name = "iPhone 13", Manufacturer = "Apple", Price = 800, ReleaseDate = new DateTime(2021, 9, 24) }
             };
 

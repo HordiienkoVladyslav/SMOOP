@@ -8,8 +8,6 @@ namespace LB2
     {
             public static void Run()
             {
-                Console.WriteLine("=== ЗАВДАННЯ 1: Фірми ===\n");
-
                 var companies = new List<Company_Task1>
             {
                 new Company_Task1 { Name = "Food", FoundationDate = new DateTime(2020, 1, 15), BusinessProfile = "Food", DirectorFullName = "John White", EmployeesCount = 150, Address = "London" },
@@ -20,38 +18,38 @@ namespace LB2
             };
 
             // 1. Інформація про всі фірми
-            var q1 = companies;
+            var all_companies = companies;
 
             // 2. Фірми, які мають назву Food
-            var q2 = companies.Where(c => c.Name.Equals("Food", StringComparison.OrdinalIgnoreCase));
+            var food_companies = companies.Where(c => c.Name.Equals("Food", StringComparison.OrdinalIgnoreCase));
 
             // 3. Фірми у галузі маркетингу
-            var q3 = companies.Where(c => c.BusinessProfile.Equals("Marketing", StringComparison.OrdinalIgnoreCase));
+            var market_companies = companies.Where(c => c.BusinessProfile.Equals("Marketing", StringComparison.OrdinalIgnoreCase));
 
             // 4. Фірми у галузі маркетингу або IT
-            var q4 = companies.Where(c => c.BusinessProfile.Equals("Marketing", StringComparison.OrdinalIgnoreCase) ||
+            var market_it_companies = companies.Where(c => c.BusinessProfile.Equals("Marketing", StringComparison.OrdinalIgnoreCase) ||
                                           c.BusinessProfile.Equals("IT", StringComparison.OrdinalIgnoreCase));
 
             // 5. Кількість співробітників > 100
-            var q5 = companies.Where(c => c.EmployeesCount > 100);
+            var count_over_100 = companies.Where(c => c.EmployeesCount > 100);
 
             // 6. Кількість співробітників у діапазоні від 100 до 300
-            var q6 = companies.Where(c => c.EmployeesCount >= 100 && c.EmployeesCount <= 300);
+            var count_range = companies.Where(c => c.EmployeesCount >= 100 && c.EmployeesCount <= 300);
 
             // 7. Фірми у Лондоні
-            var q7 = companies.Where(c => c.Address.Contains("London", StringComparison.OrdinalIgnoreCase));
+            var london_companies = companies.Where(c => c.Address.Contains("London", StringComparison.OrdinalIgnoreCase));
 
             // 8. Прізвище директора White
-            var q8 = companies.Where(c => c.DirectorFullName.EndsWith("White", StringComparison.OrdinalIgnoreCase));
+            var director_white = companies.Where(c => c.DirectorFullName.EndsWith("White", StringComparison.OrdinalIgnoreCase));
 
             // 9. Засновані понад 2 роки тому
-            var q9 = companies.Where(c => c.FoundationDate <= DateTime.Now.AddYears(-2));
+            var more_than_2_years = companies.Where(c => c.FoundationDate <= DateTime.Now.AddYears(-2));
 
             // 10.З дня заснування минуло більше 150 днів
-            var q10 = companies.Where(c => (DateTime.Now - c.FoundationDate).TotalDays > 150);
+            var more_than_150_days = companies.Where(c => (DateTime.Now - c.FoundationDate).TotalDays > 150);
 
             // 11. Прізвище директора Black та назва містить слово White
-            var q11 = companies.Where(c => c.DirectorFullName.EndsWith("Black", StringComparison.OrdinalIgnoreCase) &&
+            var director_black_name_white = companies.Where(c => c.DirectorFullName.EndsWith("Black", StringComparison.OrdinalIgnoreCase) &&
                                            c.Name.Contains("White", StringComparison.OrdinalIgnoreCase));
             }
         }
